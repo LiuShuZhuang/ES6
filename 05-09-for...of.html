@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+<body>
+    
+    <script>
+        let arr=['test','sadfg','e5jr','fasdfreq','fasdfas'];
+
+        for (let val of arr) {
+            console.log(val);
+        }
+
+        for (let val of arr.keys()) {
+            console.log(val);
+        }
+
+        for (let val of arr.entries()) {        //entries       条目;记录;入口      结果为 index 和 val 组成的数组,可进行解构赋值
+            console.log(val);
+        }
+
+        for (let [index,val] of arr.entries()) {
+            console.log(index,val);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+<body>
+    
+    <script>
+        let {age:a,name,job,sex,height="未配置身高",weight="未配置体重",top:t} = {
+            name: 'strong',
+            age: 8,
+            job: '前端',
+            sex: 'man',
+            height: '171',
+            top: 'test'
+        }
+
+        console.log(height);
+        console.log(weight);
+        console.log(t);
+
+        const rocketsTeam = {
+            name: 'rockets',
+            players: [
+                {
+                    name: 'james harden',
+                    age: 18,
+                    role: 'sg'
+                },
+                {
+                    name: 'yao ming',
+                    age: 12,
+                    role: 'c'
+                }
+            ],
+            city: 'houston'
+        }
+
+        let {namea='test',players:[,{age,name:name2}]} = rocketsTeam;
+
+        console.log(namea);
+    </script>
+</body>
+</html>

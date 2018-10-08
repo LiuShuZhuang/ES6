@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+<body>
+    
+    <script>
+        var arr=['test','sadfg','e5jr','fasdfreq','fasdfas'];
+        
+        var newArr = arr.map( (val,index) => {
+            console.log(val,index);
+            return val + 'filter和map的区别为:filter为过滤数组,map为处理数据';
+        })
+        console.log(newArr);
+    </script>
+</body>
+</html>

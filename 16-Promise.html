@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+<body>
+    <h1 class="login"></h1>
+    <h1 class="info"></h1>
+    <h1 class="news"></h1>
+    
+    <script>
+        {
+            let state = new Promise((resolve, reject) => {
+                let data = { success: true, message: '登录成功' };
+                setTimeout(() => {
+                    if (data.success) {
+                        resolve(data);
+                    } else {
+                        reject('登录失败');
+                    }
+                }, 1000);
+            })
+
+            let info = new Promise((resolve, reject) => {
+                let data = { success: true, message: '获取用户信息成功' };
+
+                setTimeout(() => {
+                    if (data.success) {
+                        resolve(data);
+                    } else {
+                        reject('获取用户信息失败');
+                    }
+                }, 1000);
+            })
+            
+            // state.then(data=>{
+            //     console.log(`登录成功${data}`);
+            //     return info;
+            // }).then(data=>{
+            //     console.log(`获取用户信息成功${data}`);
+            // })
+            
+        }
+
+        {
+            let login = document.getElementsByClassName('login')[0];
+            let info = document.getElementsByClassName('info')[0];
+            let news = document.getElementsByClassName('news')[0];
+            
+            function step1(){
+                console.log('登录信息确认中...');
+                let data = {success: false,message: '登录信息已确认'};
+
+                let fun = (resolve, reject) => {
+                    if (data.success) {
+                        setTimeout(() => {
+                            login.innerHTML = data.message;
+                            resolve(data);
+                        }, 500);
+                    } else {
+                        alert('登录失败');
+                        reject('登录失败');
+                    }
+                }
+                
+                return new Promise(fun);
+            }
+
+            function step2(){
+                console.log('消息信息获取中...');
+                let data = {success: true,message: '消息信息已确认'}
+                let fun = (resolve, reject) => {
+                    if (data.success) {
+                        setTimeout(() => {
+                            info.innerHTML = data.message;
+                            resolve(data);
+                        }, 500);
+                    }else{
+                        alert('获取信息失败');
+                        reject('获取信息失败');
+                    }
+                };
+                
+                return new Promise(fun);
+            }
+
+            function step3(){
+                console.log('获取新闻中...');
+                let data = {success: true,message: '新闻信息已获取'};
+
+                let fun = (resolve, reject) => {
+                    if (data.success) {
+                        setTimeout(() => {
+                            news.innerHTML = data.message;
+                            resolve(data);      //改变状态为resolved
+                        }, 500);
+                    }else{
+                        alert('获取信息失败');
+                        reject('获取信息失败');      //改变状态为rejected
+                    }
+                }
+                
+                return new Promise(fun);
+            }
+
+            step1()
+                .then(step2)
+                .then(step3)
+        }
+    </script>
+</body>
+</html>

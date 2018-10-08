@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+<body>
+    
+    <script>
+        {
+            var data = {
+                info: 111,
+                myFun: function(){
+                    var childInfo = 222;
+                    var childFun = ()=>{
+                        console.log(this);
+                    }
+                    return childFun();
+                }
+            }
+
+            // data.myFun();
+        }
+
+        {   
+            let test = res=>{
+                console.log(res);
+            }
+
+            test('testew');
+        }
+
+        {
+            let test = (name = 'default',age = 18)=>{
+                console.log(`名字为${name},年龄为${age}`);
+            }
+
+            test();
+        }
+    </script>
+</body>
+</html>

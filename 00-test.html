@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let obj = {
+            name: 'xiaoming',
+            age: 17
+        }
+        
+        let student = (obj) => {
+            let defaultObj = {
+                name: 'studeng',
+                age: 18
+            }
+
+            let val = Object.assign(defaultObj,obj);
+            console.log(obj);
+            console.log(defaultObj);
+            console.log(val);
+        }
+
+        student();
+    </script>
+</body>
+</html>

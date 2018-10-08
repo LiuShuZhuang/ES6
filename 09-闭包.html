@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+
+<body>
+
+    <script>
+        {
+            let arr = ['test', 'sadfg', 'e5jr', 'fasdfreq', 'fasdfas'];
+            
+            let sumParent = (arr)=>{
+                let mySum = ()=>{
+                    return arr.reduce((x,y)=>{
+                        return x+y;
+                    })
+                }
+                return mySum;
+            }
+            
+            let f1 = sumParent([1, 54, 6, 78,]);
+            let f2 = sumParent([1,54,6,78,]);
+            
+            console.log(f1());
+            console.log(f2());
+            console.log(f1==f2);
+        }
+
+        {
+            function test(){
+                var arr=new Array();
+                for (var i=0;i<5;i++) {
+                    arr.push(i*i);
+                }
+                return arr;
+            }
+
+            var str = test();
+
+            console.log(str[0]);
+            console.log(str[1]);
+            console.log(str[2]);
+        }
+
+        {
+            function count() {
+                var arr = [];
+                for (var i = 1; i <= 3; i++) {
+                    arr.push(function () {
+                        return i * i;
+                    });
+                }
+                return arr;
+            }
+
+            var results = count();
+            var f1 = results[0];
+            var f2 = results[1];
+            var f3 = results[2];
+        }
+    </script>
+</body>
+
+</html>

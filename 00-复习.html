@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+
+<body>
+    <script>
+        {
+            console.log('split原值不会发生改变--------');
+            let str = "test1, test2, test3, test4, test5";
+            console.log(str.split(','));
+            console.log(str);
+            
+        }
+        {
+            console.log('join原值不会发生改变--------');
+            let arr = ["test1", " test2", " test3", " test4", " test5"];
+            console.log(arr);
+            console.log(arr.join('.'));
+        }
+        {
+            console.log('sort原值会变--------');
+            let arr = ["test1"," test2"," test3"," test4"," test5"]
+
+            console.log(arr.sort());
+            console.log(arr);
+        }
+        
+        {
+            console.log('filter 原值不变--------');
+            let arr = ["test1"," test2"," test3"," test4"," test5"]
+            let result = arr.filter(function(val,index){
+                return val.includes('1');
+            })
+            console.log(arr);
+            console.log(result);
+        }
+        {
+            console.log('map 原值不变--------');
+            let arr = ["test1"," test2"," test3"," test4"," test5"]
+            let result = arr.map(function(val,index){
+                return val + index;
+            })
+
+            console.log(arr);
+            console.log(result);
+        }
+        {
+            console.log('some＆every 原值不变--------');
+            let arr = ["test1"," test2"," test3"," test4"," test5"]
+            
+            let result = arr.every(function(val,index){
+                return val.includes('s');
+            })
+            console.log(arr);
+            console.log(result);
+        }
+        
+        {
+            console.log('reduce--------');
+            let arr = ["test1"," test2"," test3"," test4"," test5"]
+            
+            let result = arr.reduce(function(result, val){
+                return result+val;
+            })
+
+            console.log(arr);
+            console.log(result);
+        }
+        {
+            console.log('keys,values,entries--------');
+            let arr = {
+                title: '标题',
+                info: '信息'
+            }
+            
+            console.log(Object.values(arr));
+        }
+    </script>
+</body>
+
+</html>

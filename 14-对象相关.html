@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+<body>
+    
+    <script>
+        {
+            let name = 'strong';
+            let age = 18;
+
+            let strong = {
+                name,
+                age,
+                showName() {
+                    console.log(name);
+                }
+            }
+
+            let myFun = (strong) => {
+                let defaultVal = {      //用Object.assign覆盖后相当于默认值 
+                    name: 'studentName',
+                    age: 20,
+                    job: 'student'
+                }
+                let val = Object.assign(defaultVal, strong);
+
+                console.log(val);
+            }
+
+            // myFun(strong);
+        }
+
+        {
+            let name = 'strong';
+            let age = 18;
+
+            let strong = {
+                name,
+                age,
+                showName() {
+                    console.log(name);
+                }
+            }
+            
+            // console.log(Object.keys(strong));
+            // console.log(Object.values(strong));
+            // console.log(Object.entries(strong));
+        }
+
+        {
+            let name = 'strong';
+            let age = 18;
+            let other = 'test'
+
+            let strong = {
+                name,
+                age,
+                showName() {
+                    console.log(name);
+                }
+            }
+
+            let newObj = {
+                [other+'aaa']: 'hahaha'
+            }
+
+            let myObj = Object.assign(strong,newObj);
+            console.log(myObj);
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+<body>
+    
+    <script>
+    {
+        let myMap = new Map([['name', 'strong'], ['age', 18], ['job', '前段工程师']]);
+
+        myMap.set('test','info');
+        console.log(myMap)
+    }
+
+    {
+        let myMap = new Map([['name', 'strong'], ['age', 18], ['job', '前段工程师']]);
+        console.log(myMap.get('name'));
+    }
+
+    {
+        let myMap = new Map([['name', 'strong'], ['age', 18], ['job', '前段工程师']]);
+        myMap.delete('job');
+        console.log(myMap);
+    }
+    
+    {
+        let myMap = new Map([['name', 'strong'], ['age', 18], ['job', '前段工程师']]);
+        console.log(myMap.has('name'))
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+<body>
+    
+    <script>
+        
+        {
+            let str = 'mystring';
+
+            str = str.substring(1,2);
+            // str = str.substring(2);
+            console.log(`substring用于将string分割出一部分 (开始位置,结束位置)${str}`);
+        }
+
+        {
+            let str = 'mystring';
+
+            let newStr = str.substr(2,5);
+            console.log(`substr用于切割str (开始位置,数量 ) ${newStr},${str}`);
+        }
+
+        {
+            let str = 'myString';
+
+            console.log(str.toLowerCase().includes('str'));
+        }
+    </script>
+</body>
+</html>

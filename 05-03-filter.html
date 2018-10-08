@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+<body>
+    
+    <script>
+        var arr=['test','sadfg','e5jr','fasdfreq','fasdfas'];
+        var arr2=['test1','sadfg1','e5jr1','fasdfreq1','fasdfas1'];
+        
+        // var newArr = arr.filter((val,index)=>{
+        //     return val.length>4;
+        // })
+
+        var newArr = arr.filter(function(val,index,arr){
+            return val.length < 5;
+        })
+
+        console.log(arr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+<body>
+    
+    <script>
+        {       //split 分离 字符串切割成数组
+            let string = 'asd,fg,hjk';
+            let arr = string.split(',')
+
+            console.log(`split()用于切割字符串成数组 结果为:${arr}`);
+        }
+
+        {       //join 连接 数组转字符串
+            let arr = ['asdf','tw','bhema','mrty','sdbdete'];
+            let str = arr.join('.');
+            
+            console.log(`join()用于将数组转换为str 结果为:${str}`);
+        }
+
+        {       //reverse 相反 数组反转
+            let arr = ['asdf', 'tw', 'bhema', 'mrty', 'sdbdete'];
+            let reverseArr = arr.reverse();
+
+            console.log(`reverse()用于将数组翻转 结果为:${reverseArr}`);
+        }
+
+        {       //sort 种类  数组排序
+            let arr = ['asdf', 'tw', 'bhema', 'mrty', 'sdbdete'];
+            let sortArr = arr.sort();
+
+            console.log(`sort()用于将数组排序 结果为:${sortArr}`);
+        }
+
+        {
+            //数组去重
+            let arr = ['asdf', 'tw', 'bhema', 'mrty', 'sdbdete','tw','asdf'];
+
+            let newArr = arr.filter(function(val,index,arr){
+                return arr.indexOf(val) == index;
+            })
+
+            console.log(`利用filter进行数组去重 ${newArr}`);
+        }
+
+        {       //concat 合并数组
+            let arr1 = ['fasd','tyeqt','bbcv'];
+            let arr2 = ['654435','4564',464];
+
+            let arr3 = arr1.concat(arr2);
+
+            console.log(`concat用于拼接数组 ${arr1},${arr2},${arr3}`);
+        }
+        
+        {       //slice 切下 对应substring
+            let arr = ['asdf', 'tw', 'bhema', 'mrty', 'sdbdete', 'tw', 'asdf'];
+            
+            let newArr = arr.slice(3,5);
+
+            console.log(`slice 用于切割 对应string操作的substring ${newArr}`);
+            console.log(newArr);
+        }
+
+        {       //splice 拼接 万能操作
+            let arr = ['asdf', 'tw', 'bhema', 'mrty', 'sdbdete', 'tw', 'asdf'];
+
+            arr.splice(2,1,'张全蛋','18');
+            console.log(arr);
+        }
+    </script>
+</body>
+</html>
