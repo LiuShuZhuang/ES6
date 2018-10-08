@@ -11,7 +11,11 @@
     <script>
         var mySet = new Set(['name','age','job']);
 
-        mySet.add('other');
+        var newSet = new Set([...mySet].filter((val,index)=>{
+            return val.length == 3;
+        }))
+
+        console.log(newSet);
     </script>
 </body>
 </html>
