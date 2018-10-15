@@ -8,25 +8,16 @@
 </head>
 <body>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        let obj = {
-            name: 'xiaoming',
-            age: 17
-        }
-        
-        let student = (obj) => {
-            let defaultObj = {
-                name: 'studeng',
-                age: 18
-            }
+        {
+            console.log('数字字符串---------------01,number,parseInt,parseFloat');
 
-            let val = Object.assign(defaultObj,obj);
-            console.log(obj);
-            console.log(defaultObj);
-            console.log(val);
+            let info = "01";
+            // console.log(Number(info));
+            console.log(parseInt(info));
+            // console.log(parseFloat(info));
         }
-
-        student();
     </script>
 </body>
 </html>

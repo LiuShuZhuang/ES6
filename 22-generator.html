@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Mock.js/1.0.0/mock.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        let status,
+            user,
+            info;
+
+        let judge = [true, false];
+        
+        //配置数据
+        Mock.mock("status.json", {     
+            "status|1": judge
+        })
+        Mock.mock("user.json", {
+            "name": "strong"
+        })
+        Mock.mock("info.json", {
+            "info": "数据获取完毕"
+        })
+        
+
+        let step1 = ()=>{
+            $.ajax({
+                url: 'status.json',
+                async: false,
+                success: (data)=>{
+                    status = data;
+                    console.log(data);
+                },
+                error: (error)=>{
+                    alert('error!');
+                    console.log(error);
+                }
+            })
+            return status;
+        }
+        let step2 = () => {
+            $.ajax({
+                url: 'user.json',
+                async: false,
+                success: (data) => {
+                    user = data;
+                    console.log(data);
+                },
+                error: (error) => {
+                    alert('error!');
+                    console.log(error);
+                }
+            })
+            return user;
+        }
+        let step3 = () => {
+            $.ajax({
+                url: 'info.json',
+                async: false,
+                success: (data) => {
+                    info = data;
+                    console.log(data);
+                },
+                error: (error) => {
+                    alert('error!');
+                    console.log(error);
+                }
+            })
+            return info;
+        }
+
+        function* get(){
+            yield step1();
+            yield step2();
+            yield step3();
+            return;
+        }
+        
+        let step = get();
+
+        console.log(step.next());
+        console.log(step.next());
+        console.log(step.next());
+        step.next();
+    </script>
+</body>
+</html>

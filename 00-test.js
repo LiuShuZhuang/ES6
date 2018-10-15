@@ -1,8 +1,1 @@
-var test = {
-    name: 'strong',
-    showName: function () {
-        alert(this.name);
-    }
-}
-
-test.showName();
+console.log(Number.isNaN());

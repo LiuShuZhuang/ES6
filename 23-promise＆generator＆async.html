@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //promise generator async均为解决异步问题
+        let get = (url)=> {
+            return new Promise((resolve, reject) => {
+                $.ajax({
+                    url: url, 
+                    type: 'post',
+                    success: (data) => {
+                        resolve(data);
+                    }, error: (error) => {
+                        reject(error);
+                    }
+                })
+            })
+        }
+        // {
+        //     get('data/status.json').then((data) => {
+        //         console.log(data);
+        //         return get('data/user.json');
+        //     }).then((data) => {
+        //         console.log(data);
+        //         return get('data/info.json');
+        //     }).then((data) => {
+        //         console.log(data);
+        //     }).catch((error)=>{
+        //         console.info(error);
+        //     })
+        //     console.log('程序结束');
+        // }
+
+        // {
+        //     console.info(`----------------------------------`)
+        //     function* generator(){
+        //         yield get('data/status.json');
+        //         yield get('data/user.json');
+        //         yield get('data/info.json');
+        //     }
+        //     let step = generator();
+
+        //     step.next().value.then((data)=>{
+        //         console.log(data);
+        //         return step.next().value
+        //     }).then((data)=>{
+        //         console.log(data);
+        //         return step.next().value
+        //     }).then((data)=>{
+        //         console.log(data);
+        //     }).catch((error)=>{
+        //         console.log(error);
+        //     })
+        // }
+        
+        // {
+        //     (async function async() {
+        //         let step1 = await get('data/status.json');
+        //         let step2 = await get('data/user.json');
+        //         let step3 = await get('data/info.json');
+        //     })();
+        // }
+                
+
+    </script>
+</body>
+
+</html>
