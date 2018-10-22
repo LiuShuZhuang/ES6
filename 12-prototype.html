@@ -7,60 +7,7 @@
     <title>ECMA</title>
 </head>
 <body>
-    <a></a>
     <script>
-        {
-            Array.prototype.test = function () {
-                // console.log(this.length);
-            }
-
-            var arr = [1, 3, 54, 6, 89, 865];
-
-            arr.test();
-        }
-
-        {
-            function Student(name)
-            {
-                this.name = name;
-            }
-
-            // console.log(Student.prototype.__proto__==Object.prototype);
-        }
-
-        {
-            function Student(name) 
-            {
-                this.name = name;
-            }
-
-            function NewStudent(name)
-            {
-                Student.call(this,name);
-            }
-        }
-
-        {
-            function Student(name,age){
-                this.name = name;
-                this.age = age;
-            }
-
-            Student.prototype.showName=function(){
-                console.log(this.name);
-            }
-
-            var xiaoming = new Student('xiaoming',18);
-            
-            // xiaoming.showName();
-        }
-
-        {
-            console.log(Object.is(NaN,NaN));
-            console.log(NaN===NaN);
-            console.log(Object.is(-0===0));
-            console.log(-0===0);
-        }
         
     </script>
 </body>

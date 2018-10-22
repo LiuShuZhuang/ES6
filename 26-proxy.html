@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+
+<body>
+
+    <script>
+        //在 对象和操作对象的时候 收集 有关请求操作 的各种信息
+        //Proxy会代理你要操作的对象
+        //Proxy代理能够截取原对象的各种操作方法 如 get set apply construct（new）
+
+        //target: 代理的原对象 Proxy的第一个参数
+        //handler 包含拦截和处理的对象 主要的代理内容 Proxy的第二个参数
+        // {
+        //     let obj = {
+        //         name: 'strong'
+        //     }
+
+        //     let newObj = new Proxy(obj,{
+        //         get(target,property){
+        //             if (property in target) {
+        //                 console.log(`你获取了${property}属性:${target[property]}`);
+        //                 return target[property];
+        //             }{
+        //                 console.warn(`获取不到${property}`);
+        //             }
+                    
+        //         }
+        //     })
+
+        //     console.log(newObj.name);
+        // }
+            
+        // {       //get
+        //     const Dom = new Proxy({}, {
+        //         get: (target, property, args) => {
+        //             return (args) => {
+        //                 let tmpl = document.createElement(property);
+        //                 for (let keys of Object.keys(args)) {
+        //                     tmpl.setAttribute(keys, args[keys]);
+        //                 }
+        //                 console.log(tmpl);
+        //                 return tmpl;
+        //             }
+        //         }
+        //     })
+
+        //     let div1 = Dom.div({
+        //         'id': 'div1',
+        //         'width': '100px',
+        //         'height': '100px',
+        //         'border': '1px solid red',
+        //         'background': '#ccc'
+        //     })
+        // }
+        
+        // {        //set
+        //     let obj = {
+        //         name: 'parson'
+        //     }
+
+        //     let newObj = new Proxy(obj, {
+        //         set: (target, property, value) => {
+        //             if (property == 'age' && value < 18) {
+        //                 throw RangeError('未成年');
+        //             }
+        //             target[property] = value;
+        //         }
+        //     })
+
+        //     newObj.age = 12;
+        //     console.log(newObj);
+        // }
+
+        {       //has ＆ deleteProperty
+            let obj = {
+                name: 'myName'
+            }
+
+            let newObj = new Proxy(obj,{
+                has: (target,property)=>{
+                    console.log('has判断是否存在');
+                    return property in target;
+                },
+                deleteProperty: (target,property)=>{
+                    console.log('deleteProperty正在执行删除操作');
+                    delete target[property];
+                }
+            })
+
+            console.log('name' in newObj);
+            delete newObj.name;
+        }   
+        
+        
+    </script>
+</body>
+
+</html>

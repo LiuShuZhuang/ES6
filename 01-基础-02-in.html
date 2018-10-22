@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+
+<body>
+
+    <script>
+        {
+            let info = ['test1','test2','test3'];
+            if (1 in info) {
+                // console.log('存在');
+            }else{
+                // console.log('不存在');
+            }
+        }
+
+        {
+            let obj = {
+                name: 'myName',
+                age: 18,
+                sex: 'man'
+            }
+            if ('name' in obj) {
+                console.log('存在');
+            }else{
+                console.log('不存在');
+            }
+        }
+    </script>
+</body>
+
+</html> 

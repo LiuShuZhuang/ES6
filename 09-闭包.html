@@ -11,57 +11,43 @@
 <body>
 
     <script>
-        {
-            let arr = ['test', 'sadfg', 'e5jr', 'fasdfreq', 'fasdfas'];
-            
-            let sumParent = (arr)=>{
-                let mySum = ()=>{
-                    return arr.reduce((x,y)=>{
-                        return x+y;
-                    })
+        /*
+            闭包：基于正常的垃圾回收处理机制
+            一般情况 函数执行完毕 里面的变量会释放 被垃圾回收器回收   
+            闭包可以使作用域里的变量 在函数执行完毕后 依然不被回收
+
+            如 函数child位于函数parent内
+            函数child可以访问parent内部的变量和函数     当child在parent外部被访问时 就会形成闭包 (x和info不会被回收);
+        */
+
+        {   //基本的闭包
+            function parent(x){
+                var info = 18;
+
+                return function child(y){
+                    alert(info+y+(x++));
                 }
-                return mySum;
             }
-            
-            let f1 = sumParent([1, 54, 6, 78,]);
-            let f2 = sumParent([1,54,6,78,]);
-            
-            console.log(f1());
-            console.log(f2());
-            console.log(f1==f2);
+
+            let result = parent(1);
+
+            // result(1);
+            // result(1);
+            // result(1);
         }
 
-        {
-            function test(){
-                var arr=new Array();
-                for (var i=0;i<5;i++) {
-                    arr.push(i*i);
-                }
-                return arr;
+        {   //闭包的五种写法  一
+            function Circle(r){
+                this.r = r;
             }
 
-            var str = test();
-
-            console.log(str[0]);
-            console.log(str[1]);
-            console.log(str[2]);
-        }
-
-        {
-            function count() {
-                var arr = [];
-                for (var i = 1; i <= 3; i++) {
-                    arr.push(function () {
-                        return i * i;
-                    });
-                }
-                return arr;
+            Circle.PI = 3.14159;
+            Circle.prototype.area = function(){
+                return Circle.PI*Math.pow(this.r,2);
             }
 
-            var results = count();
-            var f1 = results[0];
-            var f2 = results[1];
-            var f3 = results[2];
+            let result = new Circle(2);
+            console.log(result.area());
         }
     </script>
 </body>

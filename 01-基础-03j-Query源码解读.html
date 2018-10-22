@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+
+<body>
+
+    <script src="static/jquery/3.3.1/jquery.js"></script>
+    <script>
+        {   //访问匿名自执行函数中的变量
+            (function(){
+                let abc = function(){
+                    return 'abc为匿名自治性函数中的私有函数 ';
+                }
+
+                window.abc = abc;
+            })();
+
+            console.log(abc());
+        }
+        {
+            /*$()是jQuery()的缩写
+            window.jQuery = window.$ = jQuery;
+            jQuery.fn = jQuery.prototype;
+            */
+        }
+    </script>
+</body>
+
+</html>

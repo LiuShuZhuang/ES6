@@ -9,12 +9,19 @@
 <body>
     
     <script>
-        var test={
-            neme: 'testaaa',
-            name2: this
+        function Student(name){
+            this.name = name;
+            this.age = 18;
         }
 
-        console.log(test.name2);
+        let xiaoming = new Student('xiaoming');
+        let xiaohong = new Student('xiaohong');
+
+        Student.prototype.show = function() {
+            alert(this.name);
+        }
+        
+        xiaoming.show();
     </script>
 </body>
 </html>
