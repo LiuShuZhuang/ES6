@@ -1,36 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        div{
-            width: 100px;
-            height: 100px;
-            border: 1px solid red;
-            background: #ccc;
-        }
-    </style>
+    <title>ECMA</title>
 </head>
+    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2665214322&site=qq&menu=yes">
+        <img border="0" src="img/button_11.gif" alt="点击这里给我发消息" title="点击这里给我发消息" />
+    </a>
 <body>
-    <div></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        $(function(){
-            $('div').click(function () {
-                ($.proxy(function(){
-                    alert(this.name);
-                },obj))();
-            })
-
-            let obj = {
-                name: 'strong',
-                age: 18
-            }
-        })
-        
+        setInterval(()=>{
+            console.log(1);
+        },1000);
     </script>
 </body>
+
 </html>
