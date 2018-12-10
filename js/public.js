@@ -3,9 +3,7 @@ let age = 18;
 const job = 'IT guy';
 
 export{
-    name as testName,
+    name,
     age,
     job
 }
-
-export default 'test';

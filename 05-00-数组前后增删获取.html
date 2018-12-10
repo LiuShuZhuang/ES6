@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMA</title>
+</head>
+
+<body>
+
+    <script>
+        {
+            let arr = ['test1', 'test2', 'test3', 'test4', 'test5'];
+        }
+
+        {
+            let arr = ['test1', 'test2', 'test3', 'test4', 'test5'];
+            
+            let result = arr.unshift('test0');      //头部添加      返回数组长度
+            console.log(`${arr}`);
+        }
+        {
+            let arr = ['test1', 'test2', 'test3', 'test4', 'test5'];
+
+            let result = arr.shift();       //头部删除  返回首条数据
+            console.log(`${result}`);
+            console.log(`${arr}`);
+        }
+        {
+            let arr = ['test1', 'test2', 'test3', 'test4', 'test5'];
+
+            let result = arr.pop();     //尾部删除
+            console.log(result);
+            console.log(arr);
+        }
+        {
+            let arr = ['test1', 'test2', 'test3', 'test4', 'test5'];
+
+            let result = arr.push('test6','test7');     //尾部添加
+
+            console.log(result);
+            console.log(arr);
+        }
+    </script>
+</body>
+
+</html>
